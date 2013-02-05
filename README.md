@@ -16,6 +16,7 @@ We would need the following from Facebook
 Obviously we can't handle Facebook login. Facebook doesn't trust us, and neither should our user. So instead, we'll delegate the login functionality to Facebook using OAuth. Facebook will then give us an **authentication token** that we can use to require resources on behalf of the user.
 
 In short this is what will happen
+
 1. Go to our app
 1. Our app bounces user to FB to login
 1. User logs in via FB
@@ -56,7 +57,7 @@ npm install facebook-node-sdk
 ```
 
 And add it to your `package.json`
-```
+```diff
 "dependencies": {
     "express": "3.0.6",
     "jade": "*",
