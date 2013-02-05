@@ -29,17 +29,17 @@ But first, let's tell Facebook we're gonna rock their world.
 
 First we need to tell Facebook that we're creating a 3rd party app that relies on their platform. 
 
-![create_app]()
+![create_app](https://raw.github.com/olinjs/olinjs-5/master/images/create_app.png?login=jiahuang&token=f481306967bf5c761356dca2ed8e7d39)
 
 Say no to Heroku because we're better than some premade thing. We don't conform to molds.
 
-![heroku]()
+![heroku](https://raw.github.com/olinjs/olinjs-5/master/images/no_heroku.png?login=jiahuang&token=b18aa5b8b03243bf3c04ebad83a93aca)
 
 After you create an app, you should see a page with the app id and the app secret. Think of those two as the username and password of your app.You never want to show anyone else the app secret.
 
 Alright, after we've got this setup, we're gonna tell Facebook that we'll be testing it locally. Otherwise this would get annoying unless we did a Heroku push every time.
 
-![localhost]()
+![localhost](https://raw.github.com/olinjs/olinjs-5/master/images/set_local_dev.png?login=jiahuang&token=a02c88602a2262c3222a4d27d3b8e3e0)
 
 ### FB Auth
 Create a new express app with sessions enabled
