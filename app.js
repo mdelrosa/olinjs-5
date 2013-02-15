@@ -49,6 +49,7 @@ function facebookGetUser() {
 }
 
 app.get('/', Facebook.loginRequired(), user.list)
+app.get('/favicon.ico', Facebook.loginRequired(), user.list)
 app.get('/login', user.login);
 app.get('/logout', facebookGetUser(), user.login_page)
 app.post('/color/update', user.update_color)
