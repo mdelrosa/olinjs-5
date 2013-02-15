@@ -2,14 +2,15 @@ extends layout
 
 block content
   body
-    div#userdiv
+    div#userdiv(style="background-color: "+ prof_color)
       p Background color?
-        input(type='text') Enter a valid Color
-        button(type='submit', id='backcolor') Submit Color
+       input(type='text') Enter a valid button
+       button(type='submit', id='backcolor') Submit Color
 
       p#logout
-        button(type='submit, id='logout') Log Out
+        form(action='/logout', method='get', id='logout')
+          button(type='submit) Log Out
 
-      div#prof_pic(style="background-color: "+ prof_color)
+      div#prof_pic
         p Here's yo pic yo
         img(src=picture)

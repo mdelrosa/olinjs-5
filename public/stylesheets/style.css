@@ -18,10 +18,13 @@ a {
 .userdiv {
 	padding: 5px;
 	text-align: center;
-
 }
 
 #logout {
 	text-align:right;
 	float: right;
+}
+
+#login {
+	text-align: center;
 }

@@ -38,7 +38,9 @@ function facebookGetUser() {
   return function(req, res, next) {
     req.facebook.getUser( function(err, user) {
       if (!user || err){
-        res.send("you need to login");
+        res.render("login.jade", {
+          title: "Login!"
+        });
       } else {
         req.user = user;
         next();
@@ -47,8 +49,9 @@ function facebookGetUser() {
   }
 }
 
-app.get('/', Facebook.loginRequired(), user.list);
-app.get('/logout', facebookGetUser(), user.log_out)
+app.get('/', Facebook.loginRequired(), user.list)
+app.get('/login', user.login);
+app.get('/logout', facebookGetUser(), user.login_page)
 app.post('/color/update', user.update_color)
 // app.get('/users', user.list);
 
