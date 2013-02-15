@@ -33,7 +33,6 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-
 function facebookGetUser() {
   return function(req, res, next) {
     req.facebook.getUser( function(err, user) {

@@ -8,21 +8,17 @@ var models = require('../database'),
     Facebook = require('facebook-node-sdk')
 
 exports.login_page = function(req, res) {
-  console.log("login page");
   res.render('login.jade', {
     title: "Login!"
   });
 }
 
 exports.login = function(req, res) {
-  console.log('loggin in');
   res.redirect('/');
 }
 
 exports.list = function(req, res){
-  console.log("user page")
   req.facebook.api('/me', function(err, data) {
-    console.log(data)
   	User.find({id: data.id}).execFind(function(err, found_user) {
       
       if(err) console.log(err)
@@ -33,7 +29,6 @@ exports.list = function(req, res){
     	    req.session.picture = data.data.url;
     	  });
 
-        console.log("/ #1")
         var user = new User({
           id: data.id,
       	  name: data.name,
@@ -52,7 +47,6 @@ exports.list = function(req, res){
 
       // if the user exists in the db, display his pic
       else {
-        console.log("/ #2")
       	req.session.user = found_user[0];
       	// console.log(req.facebook.getLogoutUrl());
         req.facebook.api('/me/picture?redirect=false&type=large', function(err, picData) {
